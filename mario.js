@@ -42,7 +42,7 @@ function determineHeightAndThenDrawPyramid() {
 
      // TODO 4
      // before drawing, clear the old content
-      document.getElementById("pyramid").innerhtml = "";
+      document.getElementById("pyramid").innerHTML = "";
 
      // for each row....
      for (var row = 0; row < height; row++) {
