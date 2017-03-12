@@ -20,7 +20,10 @@ formElem.onsubmit = function(event) {
     // TODO 1
     // if they didn't type anything at all, give a different error message,
     // something like "Please provide a height"
-
+    if (heightStr == " ") {
+      displayError ("Please enter the height.");
+      return;
+    }
 
     // convert the string to an int
     height = parseInt(heightStr);
@@ -28,9 +31,13 @@ formElem.onsubmit = function(event) {
     // if the height is not-a-number, yell at them and exit early
     // TODO 2
     // negative numbers and zero should also be rejected here
+
     if (isNaN(height)) {
         displayError("That's not a valid height.");
-        return;
+      }
+    else if (height < 1) {
+      displayError("That's not a valid number.");
+      return;
     }
 
     // if the height is absurdly tall, yell at them and exit early
@@ -55,18 +62,18 @@ function displayError(message) {
     document.querySelector(".error-message").innerHTML = message;
 }
 
-
 /*
  * clearError
  *
  * Undisplays the error message and removes the red CSS style
  */
-function clearError(message) {
+function clearError() {
     // TODO 3
     // implement this function.
+    heightElem.className = "";
+    document.querySelector(".error-message").innerHTML = "";
+
 }
-
-
 
 /**
  * drawPyramid
