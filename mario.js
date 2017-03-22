@@ -97,6 +97,8 @@ function drawPyramid(height) {
 
         // TODO 1
         // insert the paragraph into the #pyramid container
+        $("#pyramid").append(rowElem);
 
+        
     }
 }
